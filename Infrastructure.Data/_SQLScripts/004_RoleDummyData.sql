@@ -1,0 +1,7 @@
+﻿INSERT [dbo].[Role] ([RoleName], [Description], [DefaultRate]) VALUES ('NZ PM / Architect', NULL, 180)
+INSERT [dbo].[Role] ([RoleName], [Description], [DefaultRate]) VALUES ('NZ Tech Lead', NULL, 180)
+INSERT [dbo].[Role] ([RoleName], [Description], [DefaultRate]) VALUES ('NZ Business Analyst', NULL, 150)
+INSERT [dbo].[Role] ([RoleName], [Description], [DefaultRate]) VALUES ('NZ Digital Designer', NULL, 150)
+INSERT [dbo].[Role] ([RoleName], [Description], [DefaultRate]) VALUES ('NZ Developer', NULL, 160)
+INSERT [dbo].[Role] ([RoleName], [Description], [DefaultRate]) VALUES ('VN Dev / Tester', NULL, 70)
+INSERT [dbo].[Role] ([RoleName], [Description], [DefaultRate]) VALUES ('VN Intermediate Developer', NULL, 50)

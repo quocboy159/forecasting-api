@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <!--Used to set the 'EnableDropAllTablesAPI' build parameter when running the code locally-->
+    <!--<EnableDropAllTablesAPI></EnableDropAllTablesAPI>-->
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(EnableDropAllTablesAPI)' == '' Or '$(EnableDropAllTablesAPI)' == 'development' Or '$(EnableDropAllTablesAPI)' == 'qa'">
+    <DefineConstants>ENABLE_DROP_ALL_TABLES_API</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="7.0.4" />
+    <PackageReference Include="Hangfire" Version="1.7.33" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="7.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.13">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Identity.Web" Version="2.5.0" />
+    <PackageReference Include="NSwag.Annotations" Version="13.18.2" />
+    <PackageReference Include="Sentry.AspNetCore" Version="3.29.1" />
+    <PackageReference Include="Sentry.Serilog" Version="3.29.1" />
+    <PackageReference Include="Serilog" Version="2.12.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+    <PackageReference Include="Serilog.Enrichers.Environment" Version="2.1.3" />
+    <PackageReference Include="Serilog.Enrichers.Process" Version="2.0.1" />
+    <PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application\ForecastingSystem.Application.csproj" />
+    <ProjectReference Include="..\ForcastingSystem.DataSyncServices\ForecastingSystem.DataSyncServices.csproj" />
+    <ProjectReference Include="..\Infrastructure.Data\ForecastingSystem.Infrastructure.Data.csproj" />
+    <ProjectReference Include="..\Infrastructure.IoC\ForecastingSystem.Infrastructure.IoC.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Logs\" />
+  </ItemGroup>
+
+
+</Project>
